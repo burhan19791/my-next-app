@@ -1,12 +1,24 @@
 'use client';
 
+import { Spinner } from 'flowbite-react';
+
 type Props = {};
 
 export default function SummaryCardSkeleton() {
   return (
     <>
-      <div role="status" className="animate-pulse">
-        <div className="mb-4 h-52 min-w-full rounded-lg bg-gray-200 dark:bg-gray-700"></div>
+      <div className="rounded-lg bg-white p-6">
+        <div className="flex items-center gap-3">
+          <div>
+            <Spinner color="info" aria-label="Info spinner example" size="sm" />
+          </div>
+          <div className="text-sm font-bold text-gray-700">
+            Nothing To Show Just Yet
+          </div>
+        </div>
+        <div className="mt-1 text-sm">
+          Your Request Summary Will Appear Here After It's Loaded
+        </div>
       </div>
     </>
   );

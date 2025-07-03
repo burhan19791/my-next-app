@@ -1,16 +1,13 @@
 'use client';
 
-import { summary } from '@/utils/common.utils';
 import SummaryCard from '../../components/summary-card/summary-card.cmp';
 import Wizard from '../../components/wizard/wizard.cmp';
 import Title from '@/components/title/title.cmp';
-import { ClaimDeclarationCard } from '../../components/claim-declaration-card/claim-declaration-card.cmp';
-import SummaryCardSkeleton from '../../components/summary-card/summary-card-skeleton.cmp';
 import AddClaimDeclaration from '../../components/add-claim-declaration/add-claim-declaration.cmp';
 import Legend from '../../partial/legend.cmp';
 import { Button } from 'flowbite-react';
-import { HiArrowNarrowRight, HiOutlineArrowNarrowRight } from 'react-icons/hi';
-import { HiArrowLongRight } from 'react-icons/hi2';
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
+import ClaimDeclarationCard from '../../components/claim-declaration-card/claim-declaration-card.cmp';
 
 export default function InboundPage() {
   return (
@@ -20,7 +17,8 @@ export default function InboundPage() {
       </div>
       <div>
         <Title title="Request Summary"></Title>
-        <SummaryCard summary={summary} isLoading={false}></SummaryCard>
+
+        <SummaryCard></SummaryCard>
         <Title title="Claim Requests"></Title>
         <ClaimDeclarationCard></ClaimDeclarationCard>
         <AddClaimDeclaration></AddClaimDeclaration>

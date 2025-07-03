@@ -18,7 +18,7 @@ export type ClaimParty = {
   phone: string;
 };
 
-export const summary: SummaryType = {
+export const summarydb: SummaryType = {
   requestNumber: '105738801',
   status: 'Draft',
   claimDate: 'Tue, Jun 10, 2025',
@@ -40,8 +40,8 @@ export const summary: SummaryType = {
   
 };
 
-export type DeclarationCardType = {
-  _Id: number,
+export type DeclarationType = {
+  id: number,
   type: string,
   chargeType1: string,
   chargeType2: string,
@@ -51,8 +51,8 @@ export type DeclarationCardType = {
   deposit3: string,
 }
 
-export const declarationCard : DeclarationCardType ={
-  _Id: 44444444,
+export const declarationdb : DeclarationType ={
+  id: 44444444,
   type: "Import From ROW",
   chargeType1: "Deposit Alternative Duty Rate",
   chargeType2: "Missing Document Deposit",

@@ -2,7 +2,7 @@
 
 type Props = {};
 
-export default function çWizard() {
+export default function Wizard() {
   return <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2">
           <div className="flex h-6 min-w-6 items-center justify-center rounded-full border-2 border-blue-500 bg-blue-500 text-base text-white">

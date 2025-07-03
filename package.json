@@ -10,6 +10,7 @@
     "postinstall": "flowbite-react patch"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.81.5",
     "flowbite-react": "^0.11.8",
     "next": "15.3.4",
     "react": "^19.0.0",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@tanstack/react-query-devtools": "^5.81.5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

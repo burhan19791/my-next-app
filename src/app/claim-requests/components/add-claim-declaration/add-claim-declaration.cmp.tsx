@@ -25,7 +25,7 @@ export default function AddClaimDeclaration() {
         </div>
         <div className="mt-4 flex justify-between">
           <div className="w-full">
-            <TextInput placeholder="Input Declaration Number to Add" required />
+            <TextInput placeholder="Input Declaration Number to Add" maxLength={8} inputMode='numeric' required />
           </div>
           <Button className='bg-green-500 text-nowrap gap-3 ml-2'>
             <HiOutlinePlus />
