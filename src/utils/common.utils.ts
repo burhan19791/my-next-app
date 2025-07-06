@@ -1,6 +1,6 @@
-import { Rowdies } from "next/font/google";
+import { Rowdies } from 'next/font/google';
 
-export type SummaryType = {
+export type Summary = {
   requestNumber: string;
   status: string;
   claimDate: string;
@@ -18,7 +18,7 @@ export type ClaimParty = {
   phone: string;
 };
 
-export const summarydb: SummaryType = {
+export const summarydb: Summary = {
   requestNumber: '105738801',
   status: 'Draft',
   claimDate: 'Tue, Jun 10, 2025',
@@ -37,28 +37,44 @@ export const summarydb: SummaryType = {
     email: 'someoneelse@gmail.com',
     phone: '+971 50 7285969',
   },
-  
 };
 
-export type DeclarationType = {
-  id: number,
-  type: string,
-  chargeType1: string,
-  chargeType2: string,
-  chargeType3: string,
-  deposit1: string,
-  deposit2: string,
-  deposit3: string,
-}
+export type Declaration = {
+  id: string;
+  declarationNumber: string;
+  type: string;
+  deposits: Deposit[];
+};
 
-export const declarationdb : DeclarationType ={
-  id: 44444444,
-  type: "Import From ROW",
-  chargeType1: "Deposit Alternative Duty Rate",
-  chargeType2: "Missing Document Deposit",
-  chargeType3: "Anti Dumping Deposit",
-  deposit1: "3,100",
-  deposit2: "500",
-  deposit3: "2,100"
-}
+export type Deposit = {
+  chargeType: string;
+  amount: number;
+  exportStatus?: string;
+  claimAmount?: number;
+};
 
+export const declarationsdb: Declaration[] = [
+  {
+    id: '1',
+    type: 'Import From ROW',
+    declarationNumber: '444444444',
+    deposits: [
+      { chargeType: 'Deposit Alternative Duty Rate', amount: 3100 },
+      { chargeType: 'Missing Document Deposit', amount: 500 },
+      { chargeType: 'Anti-Dumping Deposit', amount: 2100 },
+    ],
+  },
+  {
+    id: '2',
+    type: 'Import From ROW',
+    declarationNumber: '22222222',
+    deposits: [
+      { chargeType: 'Deposit Alternative Duty Rate', amount: 2300 },
+      { chargeType: 'Missing Document Deposit', amount: 150 },
+      { chargeType: 'Anti-Dumping Deposit', amount: 1300 },
+    ],
+  },
+];
+
+export const delay = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));

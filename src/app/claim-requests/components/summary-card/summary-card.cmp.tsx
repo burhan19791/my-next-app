@@ -1,15 +1,14 @@
 'use client';
 
 import Title from '@/components/title/title.cmp';
-import { summarydb, SummaryType } from '@/utils/common.utils';
+import { summarydb, Summary, delay } from '@/utils/common.utils';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from 'flowbite-react';
 import { HiMail, HiPhone } from 'react-icons/hi';
 import SummaryCardSkeleton from './summary-card-skeleton.cmp';
 import { DiVim } from 'react-icons/di';
 import { useEffect, useState } from 'react';
-
-type Props = { summary: SummaryType; isLoading: boolean };
+import { log } from 'console';
 
 export default function SummaryCard() {
   const [showContent, setShowContent] = useState(false);
@@ -19,27 +18,15 @@ export default function SummaryCard() {
     data: summary,
     isError,
     error,
-  } = useQuery<SummaryType, Error>({
+  } = useQuery<Summary, Error>({
     queryKey: ['getClaimDeclaration'],
-    queryFn: () => summarydb,
+    queryFn: loadSummary,
     staleTime: 1000 * 60 * 5,
   });
 
-  useEffect(() => {
-    if (!isLoading) {
-      const delay = setTimeout(() => setShowContent(true), 1000); // delay showing content by 500ms
-      return () => clearTimeout(delay);
-    } else {
-      setShowContent(false); // reset when it goes back to loading (e.g. refetch)
-    }
-  }, [isLoading]);
-
-  if (!showContent) {
-    return <SummaryCardSkeleton />;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
+  async function loadSummary(){
+   await delay(2000)
+   return summarydb
   }
 
   return (

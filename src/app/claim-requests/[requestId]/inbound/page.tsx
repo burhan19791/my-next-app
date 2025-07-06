@@ -18,7 +18,7 @@ export default function InboundPage() {
       <div>
         <Title title="Request Summary"></Title>
 
-        <SummaryCard></SummaryCard>
+        <SummaryCard />
         <Title title="Claim Requests"></Title>
         <ClaimDeclarationCard></ClaimDeclarationCard>
         <AddClaimDeclaration></AddClaimDeclaration>
